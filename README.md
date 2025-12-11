@@ -7,7 +7,7 @@ https://www.idealeeu.eu
 
 ---
 
-## TEKNIA (Technology Export Knowing Net Value Into Aggregation)
+## TEKNIA (Technology Extracting Knowledge into Net Value Aggregation)
 
 TEKNIA converts **verifiable technical knowledge** into **aggregable net value** using TEKTOKs (minimal technical value notes), reproducible evidence (DET), and hash-only anchoring (CDTL).
 
