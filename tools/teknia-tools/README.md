@@ -9,6 +9,20 @@ npm run validate:tektok
 npm run validate:agg
 npm run nv
 
+## JSON Schema export
+
+npm run export:schemas
+
+Outputs:
+
+- schemas/json/tektok.schema.json
+- schemas/json/teknia.aggregation.schema.json
+
+
+## Examples
+
+npm run check:examples
+
 ## Manifesto
 
 See ../../docs/TEKNIA/TEKNIA-Manifesto.md

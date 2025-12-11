@@ -1,0 +1,39 @@
+tektok:
+  id: "TEKTOK-ATA56-QCO-EXAMPLE-0001"
+  title: "Example TEKTOK (valid)"
+  owner_org: "AQUA"
+  authors:
+    - name: "Amedeo Pelliccia"
+      id: "github:amedeopelliccia"
+  domain: "ATA-56"
+  summary: >-
+    Minimal TEKTOK example that validates against the schema and recomputes NV.
+  links:
+    ce_id: "CE-EXAMPLE-ATA-56"
+    dm_refs: []
+    repo_path: "tools/teknia-tools/examples/TEKTOK.valid.yaml"
+  evidence:
+    det_uris:
+      - "events/TEKTOK.Minted.sample.json"
+    sha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    cdtl_anchor:
+      network: "cdtl-main-sandbox"
+      tx_id: "0x01"
+      block_hash: "0x02"
+      height: 1
+  net_value:
+    inputs:
+      trl: 7
+      quality: 0.85
+      energy_saving_pct: 5
+      co2e_avoided_kg_per_unit: 30
+      market_readiness: 0.7
+      risk_discount: 0.05
+    weights:
+      trl: 0.3
+      quality: 0.2
+      energy: 0.2
+      market: 0.15
+      co2e: 0.15
+    score: 0.557
+  date_issued: "2025-01-16T10:00:00Z"

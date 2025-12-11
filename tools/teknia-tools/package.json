@@ -12,6 +12,8 @@
     "agg": "node scripts/aggregate_validate.mjs aggregations/*.yaml",
     "hash": "node scripts/cdtl_anchor.mjs",
     "validate:tektok": "node scripts/tektok_validate.mjs tektoks/*.yaml",
-    "validate:agg": "node scripts/aggregate_validate.mjs aggregations/*.yaml"
+    "validate:agg": "node scripts/aggregate_validate.mjs aggregations/*.yaml",
+    "export:schemas": "node scripts/export_schemas.mjs",
+    "check:examples": "node scripts/check_examples.mjs"
   }
 }

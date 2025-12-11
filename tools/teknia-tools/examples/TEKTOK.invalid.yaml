@@ -1,0 +1,26 @@
+tektok:
+  id: "TEKTOK-ATA56-QCO-EXAMPLE-0002"
+  title: "Example TEKTOK (invalid)"
+  owner_org: "AQUA"
+  domain: "ATA-56"
+  summary: "This TEKTOK is intentionally invalid for testing."
+  links:
+    ce_id: "CE-EXAMPLE-ATA-56"
+  evidence:
+    det_uris: []
+    sha256: "not-a-64-hex"
+  net_value:
+    inputs:
+      trl: 7
+      quality: 0.85
+      energy_saving_pct: 5
+      co2e_avoided_kg_per_unit: 30
+      market_readiness: 0.7
+      risk_discount: 0.9
+    weights:
+      trl: 0.3
+      quality: 0.2
+      energy: 0.2
+      market: 0.15
+      co2e: 0.15
+    score: 0.557
