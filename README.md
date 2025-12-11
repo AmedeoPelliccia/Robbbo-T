@@ -5,6 +5,20 @@
 
 https://www.idealeeu.eu
 
+---
+
+## TEKNIA (Technology Export Knowing Net Value Into Aggregation)
+
+TEKNIA converts **verifiable technical knowledge** into **aggregable net value** using TEKTOKs (minimal technical value notes), reproducible evidence (DET), and hash-only anchoring (CDTL).
+
+Start here:
+
+- Manifesto: `docs/TEKNIA/TEKNIA-Manifesto.md`
+- Tooling pack: `tools/teknia-tools/`
+  - Validate: `npm run validate:tektok`, `npm run validate:agg`
+  - Export JSON Schemas: `npm run export:schemas`
+  - Examples: `npm run check:examples`
+
 # Math Foundation: Lagrangian Mechanics + Laplace
 
 ## 1) Lagrangian core
