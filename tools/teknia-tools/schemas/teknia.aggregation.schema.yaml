@@ -1,0 +1,39 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "TEKNIA aggregation schema"
+type: object
+required: [aggregation]
+properties:
+  aggregation:
+    type: object
+    required: [id, items, rules]
+    properties:
+      id: { type: string }
+      items:
+        type: array
+        minItems: 2
+        items:
+          type: object
+          required: [id, alpha, nv]
+          properties:
+            id: { type: string }
+            alpha: { type: number, minimum: 0, maximum: 1 }
+            nv: { type: number, minimum: 0, maximum: 1 }
+      rules:
+        type: object
+        required: [min_nv, dedup_by_sha256]
+        properties:
+          min_nv: { type: number, minimum: 0, maximum: 1 }
+          dedup_by_sha256: { type: boolean }
+          synergy:
+            type: object
+            properties:
+              type: { type: string }
+              delta_max: { type: number, minimum: 0, maximum: 0.1 }
+              applied: { type: number, minimum: 0, maximum: 0.1 }
+      nv_portfolio: { type: number, minimum: 0, maximum: 1 }
+      anchors:
+        type: object
+        properties:
+          cdtl:
+            type: object
+            properties: { network: { type: string }, tx_id: { type: string }, block_hash: { type: string }, height: { type: integer } }

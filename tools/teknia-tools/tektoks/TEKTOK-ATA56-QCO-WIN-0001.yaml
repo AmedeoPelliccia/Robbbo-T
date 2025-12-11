@@ -1,0 +1,30 @@
+tektok:
+  id: "TEKTOK-ATA56-QCO-WIN-0001"
+  title: "Ventanas panorámicas QCO-integradas (ATA-56)"
+  owner_org: "AMPEL360"
+  authors: [{ name: "Equipo AAA" }]
+  domain: "ATA-56"
+  summary: >-
+    Integración de ventanas panorámicas con QCO, EMI ≤100 nT/√Hz @1 Hz y ΔT_RMS ≤5 mK,
+    con S1000D‑Q y V&V HIL.
+  links:
+    ce_id: "CE-CAD-Q100-AAA-ATA-56-WINDOWS-PANORAMIC"
+    dm_refs:
+      - "docs/S1000D-Q/.../DM-ARCH.yaml"
+      - "docs/S1000D-Q/.../DM-VV.yaml"
+    repo_path: "C-AMEDEO-FRAMEWORK/.../ATA-56/.../README.md"
+  effectivity: { aircraft_sn: "Q100-0001", config: "BWB-H2", mod_state: "MS1" }
+  evidence:
+    det_uris: ["events/DET.A56.WIN.HIL.Pass.json"]
+    sha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    cdtl_anchor: { network: "cdtl-main-sandbox", tx_id: "0x01", block_hash: "0xAB", height: 1001 }
+  net_value:
+    inputs: { trl: 6, quality: 0.90, energy_saving_pct: 15, co2e_avoided_kg_per_unit: 50,
+      market_readiness: 0.60, risk_discount: 0.10 }
+    weights: { trl: 0.30, quality: 0.20, energy: 0.20, market: 0.15, co2e: 0.15 }
+    score: 0.581
+  circularity: { repairability: 0.70, recycled_content_pct: 18, reuse_rate_pct: 12, greenscore: 0.62 }
+  rights: { license: "Apache-2.0", usage: "Comercial" }
+  rie: { events: ["PR aceptado", "Zenodo DOI"] }
+  date_issued: "2025-01-16T10:00:00Z"
+  signature: "ed25519:TODO"

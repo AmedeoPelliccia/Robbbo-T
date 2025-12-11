@@ -1,0 +1,26 @@
+tektok:
+  id: "TEKTOK-ATA02-WB-0007"
+  title: "Masa y centrado — paquetes de efecto y balance"
+  owner_org: "AMPEL360"
+  authors: [{ name: "Equipo ATA-02" }]
+  domain: "ATA-02"
+  summary: >-
+    Modelos y tablas de masa/CG con Effectivity y DET; enlazado a planes de carga.
+  links:
+    ce_id: "CE-CAD-Q100-AAA-ATA-02-WEIGHT-BALANCE"
+    dm_refs: []
+    repo_path: "C-AMEDEO-FRAMEWORK/.../ATA-02/.../README.md"
+  evidence:
+    det_uris: ["events/DET.A02.WB.Pass.json"]
+    sha256: "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    cdtl_anchor: { network: "cdtl-main-sandbox", tx_id: "0x02", block_hash: "0xCD", height: 1002 }
+  net_value:
+    inputs: { trl: 7, quality: 0.85, energy_saving_pct: 5, co2e_avoided_kg_per_unit: 30,
+      market_readiness: 0.70, risk_discount: 0.05 }
+    weights: { trl: 0.30, quality: 0.20, energy: 0.20, market: 0.15, co2e: 0.15 }
+    score: 0.557
+  circularity: { repairability: 0.60, recycled_content_pct: 10, reuse_rate_pct: 8, greenscore: 0.48 }
+  rights: { license: "CC-BY-4.0", usage: "Investigación" }
+  rie: { events: ["PR aceptado"] }
+  date_issued: "2025-01-16T10:02:00Z"
+  signature: "ed25519:TODO"

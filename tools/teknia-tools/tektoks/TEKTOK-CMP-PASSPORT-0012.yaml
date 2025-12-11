@@ -1,0 +1,26 @@
+tektok:
+  id: "TEKTOK-CMP-PASSPORT-0012"
+  title: "Pasaporte de material — Aluminio reciclado 6xxx"
+  owner_org: "AQUA"
+  authors: [{ name: "Equipo EEE/MMM" }]
+  domain: "EEE/MMM"
+  summary: >-
+    Pasaporte YAML con composición, trazabilidad y rutas de reciclaje; enlazado a CDTL.
+  links:
+    ce_id: "CE-CAD-Q100-AAA-ATA-51-STRUCTURES"
+    dm_refs: []
+    repo_path: "EEE-ENVIRONMENTAL/.../material-passports/AL6xxx.yaml"
+  evidence:
+    det_uris: ["events/DET.CMP.Pass.json"]
+    sha256: "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    cdtl_anchor: { network: "cdtl-main-sandbox", tx_id: "0x03", block_hash: "0xEF", height: 1003 }
+  net_value:
+    inputs: { trl: 8, quality: 0.95, energy_saving_pct: 6, co2e_avoided_kg_per_unit: 60,
+      market_readiness: 0.80, risk_discount: 0.08 }
+    weights: { trl: 0.30, quality: 0.20, energy: 0.20, market: 0.15, co2e: 0.15 }
+    score: 0.650
+  circularity: { repairability: 0.75, recycled_content_pct: 40, reuse_rate_pct: 20, greenscore: 0.71 }
+  rights: { license: "CC-BY-4.0", usage: "Mixta" }
+  rie: { events: ["Zenodo DOI","MoU piloto"] }
+  date_issued: "2025-01-16T10:04:00Z"
+  signature: "ed25519:TODO"
