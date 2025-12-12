@@ -1,14 +1,14 @@
-# TEKNIA — Technology Export Knowing Net Value Into Aggregation
+# TEKNIA — Technology Extracting Knowledge into Net Value Aggregation
 
 **Definición oficial.**
 **TEKNIA** es la gramática económico‑técnica que convierte **conocimiento verificable** en **valor neto
 agregable**, mediante **TEKTOKs** (notas mínimas de valor técnico) **selladas en CDTL** y **trazadas** con
-evidencia reproducible (DET/S1000D ISSUE 6). TEKNIA **exporta tecnología**, prioriza el **saber contextualizado**,
+evidencia reproducible (DET/S1000D ISSUE 6). TEKNIA **extrae conocimiento tecnológico**, prioriza el **saber contextualizado**,
 mide **Net Value (anti‑burbuja)** y **agrega** para habilitar carteras, pilotos e **IPO‑pre‑génesis**.
 
 ## 1) Propósito
 
-* **Exportar** conocimiento listo para adopción (no silos).
+* **Extraer** conocimiento tecnológico listo para adopción (no silos).
 * **Saber** con contexto: métricas, porqués y trazabilidad.
 * **Valor neto**: descontar ruido y riesgo con evidencia reproducible.
 * **Agregación**: de TEKTOKs a proyectos, portfolios y génesis financieras.
