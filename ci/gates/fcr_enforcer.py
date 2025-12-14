@@ -15,14 +15,13 @@ import argparse, json, os, re, subprocess
 
 CANON_LAYERS = ["QS", "FWD", "UE", "FE", "CB", "QB"]
 CANON_PRODUCTS = ["AMPEL360‑AIR‑T", "AMPEL360‑SPACE‑T"]
-DISALLOWED_VARIANTS = [
-    r"AMPEL360\s*-\s*T\s*-\s*Air",
-    r"AMPEL360\s*-\s*T\s*-\s*Space",
-    r"AMPEL360\s*-\s*Air\s*-\s*T",
-    r"AMPEL360\s*-\s*Space\s*-\s*T",
-    r"AMPEL360[_\s-]*Air[_\s-]*T",
-    r"AMPEL360[_\s-]*Space[_\s-]*T",
-]
+# Matches any variant of AMPEL360-AIR-T or AMPEL360-SPACE-T with any dash/underscore/whitespace and any case
+# Includes ASCII hyphen, en-dash, em-dash, figure dash, minus sign, underscore, and whitespace
+DASH = r"[-‐‑‒–—―−_\\s]"  # hyphen, non-breaking hyphen, figure dash, en dash, em dash, horizontal bar, minus, underscore, whitespace
+DISALLOWED_VARIANT_REGEX = re.compile(
+    rf"ampel360{DASH}+air{DASH}+t|ampel360{DASH}+space{DASH}+t",
+    re.IGNORECASE
+)
 TEXT_EXTS = {".md", ".mdx", ".txt", ".py", ".yml", ".yaml", ".json"}
 
 def run(cmd: list[str]) -> str:
