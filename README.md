@@ -189,6 +189,7 @@ If you work on problems where **no single actor has the full answer**, IDEALEEU 
 * Explore the methodological tools: `tools/teknia-tools/`
 * Review example uncertainty knots and NKUs
 * Engage by proposing or resolving a knot
+* Refer to the [Glossary](GLOSSARY.md) for technical terms and acronyms
 
 ---
 
