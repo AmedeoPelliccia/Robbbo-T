@@ -8,6 +8,8 @@ properties:
     required: [id, items, rules]
     properties:
       id: { type: string }
+      scope: { type: string }
+      intent: { type: string }
       items:
         type: array
         minItems: 2
@@ -18,22 +20,57 @@ properties:
             id: { type: string }
             alpha: { type: number, minimum: 0, maximum: 1 }
             nv: { type: number, minimum: 0, maximum: 1 }
+            role: { type: string }
       rules:
         type: object
-        required: [min_nv, dedup_by_sha256]
         properties:
           min_nv: { type: number, minimum: 0, maximum: 1 }
           dedup_by_sha256: { type: boolean }
+          eligibility:
+            type: object
+            properties:
+              min_nv: { type: number, minimum: 0, maximum: 1 }
+              rationale: { type: string }
+          normalization:
+            type: object
+            properties:
+              alpha_sum: { type: number }
+              tolerance: { type: number }
+              rounding:
+                type: object
+                properties:
+                  decimals: { type: integer }
+                  mode: { type: string }
+          deduplication:
+            type: object
+            properties:
+              method: { type: string }
+              enforce: { type: boolean }
+              rationale: { type: string }
           synergy:
             type: object
             properties:
               type: { type: string }
+              description: { type: string }
               delta_max: { type: number, minimum: 0, maximum: 0.1 }
               applied: { type: number, minimum: 0, maximum: 0.1 }
+              justification: { type: string }
+      computation:
+        type: object
+        properties:
+          nv_base: { type: number, minimum: 0, maximum: 1 }
+          nv_synergy: { type: number }
+          nv_portfolio: { type: number, minimum: 0, maximum: 1 }
+          interpretation: { type: string }
       nv_portfolio: { type: number, minimum: 0, maximum: 1 }
       anchors:
         type: object
         properties:
           cdtl:
             type: object
-            properties: { network: { type: string }, tx_id: { type: string }, block_hash: { type: string }, height: { type: integer } }
+            properties:
+              network: { type: string }
+              tx_id: { type: string }
+              block_hash: { type: string }
+              height: { type: integer }
+              meaning: { type: string }
