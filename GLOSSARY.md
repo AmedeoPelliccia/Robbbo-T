@@ -17,11 +17,10 @@
   * **CAM** — Computer-Aided Manufacturing
   * **CAI** — Computer-Aided Integration
   * **CAV** — Computer-Aided Validation
-  * **CAP** — Computer-Aided Process planning/industrialisation
+  * **CAPP** — Computer-Aided Process Planning / industrialisation
   * **CAS** — Computer-Aided Service & sustainment
   * **CAQ** — Computer-Aided Quality assurance
   * **CAT** — Computer-Aided Testing
-  * **CAPP** — Computer-Aided Process Planning
 
 ## Configuration Management
 
