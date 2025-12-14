@@ -55,12 +55,12 @@ function main() {
         const compBase = ag.computation.nv_base;
         const compSynergy = ag.computation.nv_synergy;
         if (compBase != null && Math.abs(compBase - base) > 0.01) {
-          console.error(`✖ ${f}: computation.nv_base mismatch given=${compBase} calc=${base.toFixed(5)}`);
+          console.error(`✖ ${f}: computation.nv_base mismatch given=${compBase.toFixed(5)} calc=${base.toFixed(5)}`);
           bad++;
           continue;
         }
         if (compSynergy != null && Math.abs(compSynergy - synergy) > 0.001) {
-          console.error(`✖ ${f}: computation.nv_synergy mismatch given=${compSynergy} calc=${synergy}`);
+          console.error(`✖ ${f}: computation.nv_synergy mismatch given=${compSynergy.toFixed(3)} calc=${synergy.toFixed(3)}`);
           bad++;
           continue;
         }

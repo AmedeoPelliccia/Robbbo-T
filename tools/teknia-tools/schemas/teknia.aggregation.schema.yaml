@@ -24,8 +24,10 @@ properties:
       rules:
         type: object
         properties:
+          # Legacy fields (backward compatibility)
           min_nv: { type: number, minimum: 0, maximum: 1 }
           dedup_by_sha256: { type: boolean }
+          # Enhanced fields
           eligibility:
             type: object
             properties:
