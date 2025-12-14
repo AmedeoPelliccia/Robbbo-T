@@ -240,3 +240,4 @@ It complements existing structures by making knowledge value explicit and compar
 
 > **Achieving climate-neutral and sustainable aviation requires not only innovation, but shared, verifiable understanding.
 > TEKNIA exists to make that understanding visible, measurable, and reusable across the European ecosystem.**
+> "
