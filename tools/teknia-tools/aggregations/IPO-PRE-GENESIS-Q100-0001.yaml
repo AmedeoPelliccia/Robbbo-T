@@ -1,13 +1,57 @@
 aggregation:
   id: "IPO-PRE-GENESIS-Q100-0001"
+  scope: "Portfolio-level NKU aggregation for pre-genesis valuation and risk positioning"
+  intent: "Quantify net knowledge value of a composite TEKTOK portfolio with bounded synergy"
+
   items:
-    - { id: "TEKTOK-ATA56-QCO-WIN-0001", alpha: 0.40, nv: 0.581 }
-    - { id: "TEKTOK-ATA02-WB-0007",       alpha: 0.35, nv: 0.557 }
-    - { id: "TEKTOK-CMP-PASSPORT-0012",   alpha: 0.25, nv: 0.650 }
+    - id: "TEKTOK-ATA56-QCO-WIN-0001"
+      alpha: 0.40
+      nv: 0.581
+      role: "Primary aerodynamic / structural uncertainty reduction"
+    - id: "TEKTOK-ATA02-WB-0007"
+      alpha: 0.35
+      nv: 0.557
+      role: "Operational and weight-balance feasibility clarification"
+    - id: "TEKTOK-CMP-PASSPORT-0012"
+      alpha: 0.25
+      nv: 0.650
+      role: "Lifecycle traceability and compliance-risk reduction"
+
   rules:
-    min_nv: 0.50
-    dedup_by_sha256: true
-    synergy: { type: "risk_reduction", delta_max: 0.05, applied: 0.03 }
+    eligibility:
+      min_nv: 0.50
+      rationale: "Exclude contributions that do not meet minimum verifiable uncertainty reduction"
+
+    normalization:
+      alpha_sum: 1.0
+      tolerance: 1e-6
+      rounding:
+        decimals: 3
+        mode: "half_up"
+
+    deduplication:
+      method: "sha256"
+      enforce: true
+      rationale: "Prevent double-counting of equivalent knowledge artifacts"
+
+    synergy:
+      type: "risk_reduction"
+      description: "Non-linear benefit from resolving coupled uncertainties across items"
+      delta_max: 0.05
+      applied: 0.03
+      justification: "Observed cross-domain risk coupling reduction without over-attribution"
+
+  computation:
+    nv_base: 0.58985
+    nv_synergy: 0.03
+    nv_portfolio: 0.620
+    interpretation: "Portfolio exceeds minimum credibility threshold for pre-genesis positioning"
+
   nv_portfolio: 0.620
   anchors:
-    cdtl: { network: "cdtl-main-sandbox", tx_id: "0xAGG01", block_hash: "0x1234", height: 2001 }
+    cdtl:
+      network: "cdtl-main-sandbox"
+      tx_id: "0xAGG01"
+      block_hash: "0x1234"
+      height: 2001
+      meaning: "Immutable anchoring of aggregation state and computation inputs"

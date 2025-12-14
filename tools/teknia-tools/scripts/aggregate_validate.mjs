@@ -38,13 +38,34 @@ function main() {
         continue;
       }
       const base = items.reduce((s, x) => s + (x.nv || 0) * (x.alpha || 0), 0);
+      // Support both old and new synergy structure
       const synergy = ag.rules?.synergy?.applied || 0;
       const nv = Math.round((base + synergy) * 1000) / 1000;
-      if (ag.nv_portfolio != null && Math.abs(nv - ag.nv_portfolio) > 0.01) {
-        console.error(`✖ ${f}: nv_portfolio mismatch given=${ag.nv_portfolio} calc=${nv}`);
+      
+      // Check nv_portfolio at top level (for backward compatibility) or in computation section
+      const expectedNv = ag.computation?.nv_portfolio ?? ag.nv_portfolio;
+      if (expectedNv != null && Math.abs(nv - expectedNv) > 0.01) {
+        console.error(`✖ ${f}: nv_portfolio mismatch given=${expectedNv} calc=${nv}`);
         bad++;
         continue;
       }
+      
+      // Optional: validate computation section consistency if present
+      if (ag.computation) {
+        const compBase = ag.computation.nv_base;
+        const compSynergy = ag.computation.nv_synergy;
+        if (compBase != null && Math.abs(compBase - base) > 0.01) {
+          console.error(`✖ ${f}: computation.nv_base mismatch given=${compBase.toFixed(5)} calc=${base.toFixed(5)}`);
+          bad++;
+          continue;
+        }
+        if (compSynergy != null && Math.abs(compSynergy - synergy) > 0.001) {
+          console.error(`✖ ${f}: computation.nv_synergy mismatch given=${compSynergy.toFixed(3)} calc=${synergy.toFixed(3)}`);
+          bad++;
+          continue;
+        }
+      }
+      
       console.log(`✔ ${f} NV=${nv}`);
     } catch (e) {
       console.error(`✖ ${f}: ${(e && e.message) || e}`);
