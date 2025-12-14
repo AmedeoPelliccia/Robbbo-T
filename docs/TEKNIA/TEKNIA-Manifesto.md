@@ -1,149 +1,243 @@
-# TEKNIA — Technology Export Knowing Net Value Into Aggregation
+# TEKNIA — Technology Extracting Knowledge into Net Value Aggregation
 
-**Definición oficial.**
-**TEKNIA** es la gramática económico‑técnica que convierte **conocimiento verificable** en **valor neto
-agregable**, mediante **TEKTOKs** (notas mínimas de valor técnico) **selladas en CDTL** y **trazadas** con
-evidencia reproducible (DET/S1000D ISSUE 6). TEKNIA **exporta tecnología**, prioriza el **saber contextualizado**,
-mide **Net Value (anti‑burbuja)** y **agrega** para habilitar carteras, pilotos e **IPO‑pre‑génesis**.
-
-## 1) Propósito
-
-* **Exportar** conocimiento listo para adopción (no silos).
-* **Saber** con contexto: métricas, porqués y trazabilidad.
-* **Valor neto**: descontar ruido y riesgo con evidencia reproducible.
-* **Agregación**: de TEKTOKs a proyectos, portfolios y génesis financieras.
-
-## 2) Principios (AQUA)
-
-1. **Hash‑only on‑chain** (CDTL): pruebas, no datos sensibles.
-2. **Reproducibilidad**: toda afirmación viene con DET y RTM.
-3. **Anti‑burbuja**: Net Value = métrica verificada × descuento de riesgo.
-4. **Agregación con reglas**: sin duplicados, con sinergias acotadas y umbrales.
-5. **Ética y cumplimiento**: GDPR/MiCA, licencias claras, auditoría abierta.
-
-Nota de control: el campo `domain` debe salir de un catálogo controlado (p. ej. ATA + códigos propios), versionado en el repo y opcionalmente anclado (hash-only) en CDTL para evitar divergencias.
+## Manifesto (EU / Clean Aviation aligned)
 
 ---
 
-## 3) Campos mínimos de un TEKTOK (schema mínimo)
+## 1. Purpose and context
 
-```yaml
-tektok:
-  id: "TEKTOK-<dominio>-<slug>-<nnnn>"
-  title: "Nombre corto verificable"
-  owner_org: "AQUA|Socio"
-  authors: [{ name: "Nombre", id: "ORCID|Git" }]
-  domain: "ATA-56|ATA-02|CQH|..."
-  summary: >-
-    Qué resuelve, base técnica, alcance y límites, en 4–6 líneas.
-  links:
-    ce_id: "CE-... (S1000D-Q)"
-    dm_refs: ["docs/S1000D-Q/.../DM-ARCH.yaml"]
-    repo_path: "ruta/al/artefacto.principal"
-  effectivity:
-    aircraft_sn: "Q100-0001"
-    config: "BWB-H2"
-    mod_state: "MS1"
-  evidence:
-    det_uris: ["events/DET-...json"]
-    sha256: "64_hex_de_canonical"
-    cdtl_anchor:
-      network: "cdtl-main-sandbox"
-      tx_id: "0x..."
-      block_hash: "0x..."
-      height: 1234
-  net_value:
-    inputs:
-      trl: 1..9
-      quality: 0.0..1.0
-      energy_saving_pct: 0..100
-      co2e_avoided_kg_per_unit: 0..N
-      market_readiness: 0.0..1.0
-      risk_discount: 0.0..0.5
-    weights:
-      trl: 0.30
-      quality: 0.20
-      energy: 0.20
-      market: 0.15
-      co2e: 0.15
-    score: 0.0..1.0
-  circularity:
-    repairability: 0.0..1.0
-    recycled_content_pct: 0..100
-    reuse_rate_pct: 0..100
-    greenscore: 0.0..1.0
-  rights:
-    license: "CC-BY-4.0|Apache-2.0|Propietaria"
-    usage: "Investigación|Comercial|Mixta"
-  rie:
-    events: ["Zenodo DOI","PR aceptado","Estándar/SC","MoU piloto"]
-  date_issued: "2025-01-16T10:00:00Z"
-  signature: "ed25519:base64"
-```
+**TEKNIA** is a methodological framework to support **credible, evidence-based progress** in large-scale, regulated, and long-term industrial transitions, in particular those aligned with **EU climate, safety, and competitiveness objectives**.
 
-**Requisitos mínimos (must):** `id,title,owner_org,domain,summary,links.ce_id,evidence.sha256,net_value.score`.
+It is designed for contexts where:
+
+* multiple stakeholders contribute to a shared objective,
+* uncertainty spans technology, certification, operations, and economics,
+* safety and regulatory compliance are mandatory,
+* and impact must be demonstrated beyond individual projects.
+
+TEKNIA complements existing EU instruments such as **Horizon Europe**, **Clean Aviation Joint Undertaking**, and **European Green Deal** initiatives by providing a **common language to describe, measure, and aggregate knowledge-based progress**.
 
 ---
 
-## 4) Net Value (anti‑burbuja) — fórmula canónica
+## 2. The systemic challenge
 
-Normalizaciones:
+EU flagship programmes increasingly address **system-level transitions**, for example:
 
-* `trl_norm = trl / 9`
-* `energy_norm = min(energy_saving_pct / 30, 1)`
-* `co2e_norm = min(co2e_avoided_kg_per_unit / 100, 1)`
+* climate-neutral aviation,
+* sustainable energy systems,
+* resilient infrastructure.
 
-Ponderación: `w = {trl:0.30, quality:0.20, energy:0.20, market:0.15, co2e:0.15}`.
-Descuento de riesgo `β ∈ [0,0.5]`, aplicado **linealmente** como multiplicador `(1-β)`.
-Si se adopta una versión no lineal (p. ej. log-odds para riesgos extremos), debe publicarse como nueva versión de la fórmula y trazarse en el DET.
+These challenges are characterised by:
 
-`NV = (0.30*trl_norm + 0.20*quality + 0.20*energy_norm + 0.15*market + 0.15*co2e_norm) * (1-β)`
+* long development cycles,
+* interdependence between technology, regulation, and operations,
+* partial knowledge and evolving assumptions,
+* contributions distributed across projects and actors.
+
+In such environments, progress is often difficult to measure consistently, and early contributions that reduce uncertainty are not always visible or valued.
+
+TEKNIA addresses this gap.
 
 ---
 
-## 5) Sellado y verificación (CDTL/DET)
+## 3. Foundational principle
 
-* **Canonicalización**: antes de hashear, normalizar finales de línea (LF) y asegurar `\n` final.
-* **On-chain**: publicar solo el **hash** (no datos sensibles). El anclaje puede ser real o simulado (sandbox).
-* **Verificación**: la evidencia (DET/RTM) debe permitir reproducir el claim (inputs → score → agregación).
+> **Progress in complex transitions is achieved by reducing uncertainty in a verifiable and reusable manner.**
 
-Formato mínimo recomendado para un DET (machine-readable), evitando “DET vacíos”:
+TEKNIA treats **uncertainty reduction** as the primary unit of value, rather than document production, isolated deliverables, or narrative claims.
 
-```json
-{
-  "tektok_id": "TEKTOK-...",
-  "tool": "teknia-tools",
-  "tool_version": "1.x",
-  "schema": "tektok.schema.yaml",
-  "git_commit": "<sha>",
-  "dataset_sha256": "<64hex>",
-  "inputs": { "trl": 7, "quality": 0.85, "energy_saving_pct": 5, "co2e_avoided_kg_per_unit": 30, "market_readiness": 0.70, "risk_discount": 0.05 },
-  "weights": { "trl": 0.30, "quality": 0.20, "energy": 0.20, "market": 0.15, "co2e": 0.15 },
-  "computed_score": 0.557,
-  "checks": [
-    { "name": "schema", "ok": true },
-    { "name": "nv_recompute", "ok": true }
-  ]
-}
-```
+---
 
-Comandos (pack local):
+## 4. NKU — Net Knowledge Unit
 
-```bash
-npm run validate:tektok
-npm run validate:agg
-npm run nv
-npm run hash -- events/TEKTOK.Minted.sample.json
-```
+### Definition
 
-## 6) Reglas de agregación (mínimas)
+**NKU (Net Knowledge Unit)**
+**New Knowledge Understanding in Network Knots of Uncertainty**
 
-* Sin duplicados por `evidence.sha256`.
-* `net_value.score ≥ 0.50` y `evidence.det_uris` verificables.
-* Pesos α suman 1; sinergia solo justificable como **reducción de riesgo** y acotada (por ejemplo, `ΔNV ≤ +0.05`).
+An NKU is the **smallest verifiable increment of understanding** that reduces uncertainty at a specific point of interaction between technical, regulatory, operational, or economic factors.
 
-Ejemplo (ilustrativo):
+NKUs are **technology-agnostic** and **market-neutral**.
+They focus on *what is known*, not on who delivers or commercialises it.
 
-* Base: `NV_portfolio = Σ(alpha_i * nv_i)`
-* Sinergia: `NV_portfolio' = NV_portfolio + ΔNV`, con `0 ≤ ΔNV ≤ 0.05`.
+### Characteristics of a valid NKU
 
+An NKU must:
+
+* identify the uncertainty addressed,
+* define the baseline state,
+* provide evidence (models, data, tests, analyses),
+* bound the residual uncertainty,
+* clarify its applicability and limitations.
+
+Information that does not reduce uncertainty in a demonstrable way does not qualify as an NKU.
+
+---
+
+## 5. Knots of uncertainty: framing system transitions
+
+Complex transitions cannot be decomposed into independent tasks from the outset.
+
+TEKNIA models them as **networks of uncertainty knots**, where multiple dimensions interact, for example:
+
+* technology readiness × certification pathways,
+* operational feasibility × safety requirements,
+* economic viability × policy constraints,
+* infrastructure availability × deployment timelines.
+
+A **knot** exists where progress is blocked unless several uncertainties are resolved together.
+
+This framing aligns with EU **system-of-systems** and **transition pathway** approaches.
+
+---
+
+## 6. From global challenge to structured progress
+
+TEKNIA applies a disciplined sequence:
+
+1. **Global problem framing**
+   A high-level NKU describes the overall uncertainty network (e.g. climate-neutral aviation within defined timeframes).
+
+2. **Controlled decomposition**
+   The global uncertainty is decomposed into identifiable knots.
+
+3. **Targeted NKUs**
+   Individual projects, studies, or demonstrations contribute NKUs that reduce uncertainty at specific knots.
+
+This ensures coherence across projects and avoids fragmented or redundant effort.
+
+---
+
+## 7. TEKTOK — structuring exchange and governance
+
+While NKUs describe **knowledge creation**, **TEKTOKs** describe **knowledge use and exchange**.
+
+A **TEKTOK** is a governed, auditable construct that:
+
+* references one or more NKUs,
+* defines rights of use, reuse, and modification,
+* specifies obligations, responsibilities, and context,
+* allocates risk in line with regulatory and contractual frameworks.
+
+In EU terms:
+
+* NKUs align with **results and evidence**,
+* TEKTOKs align with **exploitation, licensing, and operational deployment**.
+
+---
+
+## 8. Competition, collaboration, and EU programmes
+
+EU programmes often combine:
+
+* collaborative research,
+* pre-competitive development,
+* competitive procurement.
+
+TEKNIA explicitly recognises that:
+
+* multiple actors may contribute valid uncertainty reduction,
+* not all value creation coincides with final system delivery,
+* early knowledge can be a public or shared good.
+
+This perspective is compatible with:
+
+* **pre-commercial procurement (PCP)**,
+* **innovation actions**,
+* **co-funded partnerships**.
+
+---
+
+## 9. Investment, planning, and roadmaps
+
+NKUs may originate from:
+
+* technical research,
+* regulatory analysis,
+* operational demonstrations,
+* or **investment and resource estimation**.
+
+An investment-related NKU is valid when it:
+
+* reduces uncertainty about feasibility, cost, or sequencing,
+* is evidence-based,
+* supports credible transition roadmaps.
+
+This aligns with EU requirements for:
+
+* realistic deployment pathways,
+* cost-effectiveness assessment,
+* risk-aware planning.
+
+---
+
+## 10. Aggregation and impact
+
+TEKNIA supports aggregation of NKUs across:
+
+* projects,
+* work packages,
+* programmes,
+* and timeframes.
+
+This enables:
+
+* traceable contribution to high-level objectives (e.g. climate neutrality),
+* avoidance of double counting,
+* transparent assessment of progress.
+
+Impact is expressed as **measurable reduction of uncertainty**, rather than solely as technology maturity claims.
+
+---
+
+## 11. Long-term transitions and public value
+
+Transitions such as climate-neutral aviation extend beyond single funding cycles.
+
+TEKNIA supports:
+
+* knowledge continuity across programmes,
+* reuse of validated results,
+* recognition of contributions with long-term public value.
+
+This is consistent with the EU focus on:
+
+* sustainability,
+* strategic autonomy,
+* long-term industrial competitiveness.
+
+---
+
+## 12. What TEKNIA is (and is not)
+
+**TEKNIA is:**
+
+* a methodological alignment layer,
+* a common epistemic framework,
+* a support to evidence-based governance.
+
+**TEKNIA is not:**
+
+* a replacement for EU funding rules,
+* a certification framework,
+* or a commercialisation mechanism.
+
+It complements existing structures by making knowledge value explicit and comparable.
+
+---
+
+## 13. Guiding principles (EU-aligned)
+
+* Evidence-based progress
+* Transparency of assumptions
+* System-level coherence
+* Responsible uncertainty management
+* Reusability and traceability
+
+---
+
+## 14. Closing statement
+
+> **Achieving climate-neutral and sustainable aviation requires not only innovation, but shared, verifiable understanding.
+> TEKNIA exists to make that understanding visible, measurable, and reusable across the European ecosystem.**
+> "
