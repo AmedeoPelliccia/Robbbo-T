@@ -1,0 +1,19 @@
+{
+  "name": "teknia-tools",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "yaml": "^2.4.5",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "scripts": {
+    "nv": "node scripts/tektok_nv.mjs tektoks/*.yaml",
+    "agg": "node scripts/aggregate_validate.mjs aggregations/*.yaml",
+    "hash": "node scripts/cdtl_anchor.mjs",
+    "validate:tektok": "node scripts/tektok_validate.mjs tektoks/*.yaml",
+    "validate:agg": "node scripts/aggregate_validate.mjs aggregations/*.yaml",
+    "export:schemas": "node scripts/export_schemas.mjs",
+    "check:examples": "node scripts/check_examples.mjs"
+  }
+}

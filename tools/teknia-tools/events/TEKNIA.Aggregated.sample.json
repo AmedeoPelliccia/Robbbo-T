@@ -1,0 +1,12 @@
+{
+  "event": "TEKNIA.Aggregated",
+  "portfolio": "IPO-PRE-GENESIS-Q100-0000",
+  "items": [
+    "TEKTOK-A",
+    "TEKTOK-B",
+    "TEKTOK-C"
+  ],
+  "nv_portfolio": 0.62,
+  "cdtl_tx": "0xAGG00",
+  "ts": "2025-01-16T10:06:00Z"
+}
