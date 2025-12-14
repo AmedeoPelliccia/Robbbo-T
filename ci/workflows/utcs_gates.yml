@@ -13,7 +13,7 @@ jobs:
       - name: ⬇️ Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # full history for diff analysis
+          fetch-depth: 2  # sufficient for PR diff analysis; increase if needed
 
       - name: 🐍 Setup Python
         uses: actions/setup-python@v5
