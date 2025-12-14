@@ -11,13 +11,7 @@ from pathlib import Path
 import re
 import sys
 
-RE_MD_LINK = re.compile(r'(?<!!)
-
-\[[^\]
-
-]+\]
-
-\(([^)]+)\)')  # skip images
+RE_MD_LINK = re.compile(r'(?<!!)\[([^\]]+)\]\(([^)]+)\)')  # skip images
 SKIP_SCHEMES = ("http://", "https://", "mailto:", "tel:")
 
 def main() -> int:
