@@ -101,7 +101,7 @@
 
 ---
 
-### How to use
+### How to Use
 1. Copy this checklist into your PR description **or** attach it as `governance/MAL‑EEM/CHECKLIST_PR.md` in the diff.  
 2. Ensure UTCS record(s) and hazard log are updated *in the same PR*.  
 3. For **high‑risk** items, obtain Safety Officer signature before merge.
