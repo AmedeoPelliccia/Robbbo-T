@@ -192,6 +192,65 @@ If you work on problems where **no single actor has the full answer**, IDEALEEU 
 
 ---
 
+## Repository Structure
+
+This repository is organized into the following main sections:
+
+### Projects
+* [PROJECTS/AMPEL360/](./PROJECTS/AMPEL360/) — Manned aerospace systems with quantum-enhanced capabilities
+* [PROJECTS/INFRANET/](./PROJECTS/INFRANET/) — Infrastructure and network systems
+
+### Products
+* [PRODUCTS/](./PRODUCTS/) — Strategic product lines organized by operational characteristics
+
+### Environments
+* [ENVIRONMENTS/](./ENVIRONMENTS/) — Digital and physical operational contexts
+
+### Fields
+* [FIELDS/](./FIELDS/) — Specialized domain categories
+
+### Documentation
+* [docs/TEKNIA/](./docs/TEKNIA/) — TEKNIA framework documentation
+  * [docs/TEKNIA/TEKNIA-Manifesto.md](./docs/TEKNIA/TEKNIA-Manifesto.md) — Core manifesto
+* [docs/PLAYBOOKS/](./docs/PLAYBOOKS/) — Operational playbooks
+  * [docs/PLAYBOOKS/H2_SAFETY.md](./docs/PLAYBOOKS/H2_SAFETY.md) — Hydrogen safety procedures
+* [docs/ROADMAP.md](./docs/ROADMAP.md) — Project roadmap
+
+### Governance
+* [governance/COMPLIANCE/](./governance/COMPLIANCE/) — Compliance documentation
+  * [governance/COMPLIANCE/MoC/](./governance/COMPLIANCE/MoC/) — Means of Compliance
+  * [governance/COMPLIANCE/MoC/examples/](./governance/COMPLIANCE/MoC/examples/) — MoC examples
+* [governance/MAL-EEM/](./governance/MAL-EEM/) — Machine Learning Ethics, Empathy, Explainability, and Mitigation
+  * [governance/MAL-EEM/checklist.md](./governance/MAL-EEM/checklist.md) — MAL-EEM checklist
+
+### Tools
+* [tools/teknia-tools/](./tools/teknia-tools/) — TEKNIA methodological tools
+  * [tools/teknia-tools/schemas/](./tools/teknia-tools/schemas/) — JSON schemas
+  * [tools/teknia-tools/examples/](./tools/teknia-tools/examples/) — Usage examples
+  * [tools/teknia-tools/scripts/](./tools/teknia-tools/scripts/) — Automation scripts
+  * [tools/teknia-tools/events/](./tools/teknia-tools/events/) — Event definitions
+  * [tools/teknia-tools/tektoks/](./tools/teknia-tools/tektoks/) — TEKTOK implementations
+  * [tools/teknia-tools/aggregations/](./tools/teknia-tools/aggregations/) — Data aggregations
+* [tools/CLI/](./tools/CLI/) — Command-line interface tools
+* [tools/templates/](./tools/templates/) — Document templates
+
+### Continuous Integration
+* [ci/gates/](./ci/gates/) — CI gate enforcement
+  * [ci/gates/FCR_1_checklist.md](./ci/gates/FCR_1_checklist.md) — Feature Completion Report checklist
+  * [ci/gates/FCR_2_checklist.md](./ci/gates/FCR_2_checklist.md) — UTCS traceability checklist
+  * [ci/gates/NAME_LOCK_ALLOWLIST.md](./ci/gates/NAME_LOCK_ALLOWLIST.md) — Name-lock enforcement
+* [ci/workflows/](./ci/workflows/) — CI/CD workflow definitions
+
+### Scripts
+* [scripts/](./scripts/) — Automation and utility scripts
+
+### Supporting Documentation
+* [CONTRIBUTING.md](./CONTRIBUTING.md) — Contribution guidelines
+* [SECURITY.md](./SECURITY.md) — Security and responsible disclosure
+* [.ASI-T2-STRUCTURE-VERIFICATION.md](./.ASI-T2-STRUCTURE-VERIFICATION.md) — Repository structure verification
+
+---
+
 ## Guiding principle
 
 > **Progress is not measured by how much we claim to know,
