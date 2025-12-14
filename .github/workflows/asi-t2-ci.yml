@@ -20,11 +20,10 @@ jobs:
     - name: Setup simulation tracking
       id: setup
       run: |
-        # Generate simulation ID with timestamp and random suffix
-        TIMESTAMP=$(date -u +"%Y%m%d_%H%M%S")
-        RANDOM_SUFFIX=$RANDOM
-        SIMULATION_ID="sim_${TIMESTAMP}_${RANDOM_SUFFIX}"
+        # Generate simulation ID with timestamp and GitHub run ID for uniqueness
         ISO_TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+        TIMESTAMP=$(echo "$ISO_TIMESTAMP" | sed 's/[-:T]//g' | sed 's/Z//')
+        SIMULATION_ID="sim_${TIMESTAMP}_${{ github.run_id }}"
         
         echo "simulation_id=${SIMULATION_ID}" >> $GITHUB_OUTPUT
         echo "timestamp=${ISO_TIMESTAMP}" >> $GITHUB_OUTPUT
