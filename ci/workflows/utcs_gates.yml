@@ -34,7 +34,7 @@ jobs:
           python ci/gates/fcr_enforcer.py \
             --base "$BASE_SHA" \
             --head "$HEAD_SHA" \
-            --allowlist ci/gates/NAME_LOCK_ALLOWLIST.txt
+            --allowlist ci/gates/NAME_LOCK_ALLOWLIST.csv
 
       - name: 🧪 Validate checklist CSVs (optional)
         run: python ci/gates/validate_checklists.py
