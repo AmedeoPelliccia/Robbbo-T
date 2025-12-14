@@ -10,9 +10,27 @@ jobs:
   validate-structure:
     runs-on: ubuntu-latest
     name: Validate Repository Structure
+    outputs:
+      simulation_id: ${{ steps.setup.outputs.simulation_id }}
+      timestamp: ${{ steps.setup.outputs.timestamp }}
     
     steps:
     - uses: actions/checkout@v4
+    
+    - name: Setup simulation tracking
+      id: setup
+      run: |
+        # Generate simulation ID with timestamp and random suffix
+        TIMESTAMP=$(date -u +"%Y%m%d_%H%M%S")
+        RANDOM_SUFFIX=$RANDOM
+        SIMULATION_ID="sim_${TIMESTAMP}_${RANDOM_SUFFIX}"
+        ISO_TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+        
+        echo "simulation_id=${SIMULATION_ID}" >> $GITHUB_OUTPUT
+        echo "timestamp=${ISO_TIMESTAMP}" >> $GITHUB_OUTPUT
+        
+        echo "Simulation ID: ${SIMULATION_ID}"
+        echo "Timestamp: ${ISO_TIMESTAMP}"
     
     - name: Verify ASI-T2 Structure
       run: |
