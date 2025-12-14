@@ -27,7 +27,7 @@ def main() -> int:
             continue
 
         for match in RE_MD_LINK.finditer(text):
-            raw = match.group(1).strip()
+            raw = match.group(2).strip()
             if not raw or raw.startswith("#") or raw.startswith(SKIP_SCHEMES):
                 continue
             target = raw.split("#", 1)[0]  # remove fragment
