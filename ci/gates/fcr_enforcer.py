@@ -11,7 +11,7 @@ FCR/UTCS/NAME-LOCK gate:
 """
 from __future__ import annotations
 from pathlib import Path
-import argparse, json, os, re, subprocess, sys
+import argparse, json, os, re, subprocess
 
 CANON_LAYERS = ["QS", "FWD", "UE", "FE", "CB", "QB"]
 CANON_PRODUCTS = ["AMPEL360‑AIR‑T", "AMPEL360‑SPACE‑T"]
